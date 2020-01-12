@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Catalog</title>
+</head>
+<body>
+    <h2>Display catalog here using Django Templates</h2>
+    <h3>{{ title }}</h3>
+
+    {% for m in movies %}
+        <li>{{m.title}}</li>
+
+    {% endfor %}
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Release Year</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {% for m in movies %}
+                <tr>
+                    <td>{{m.id}}</td>
+                    <td>{{m.title}}</td>
+                    <td>{{m.release_year}}</td>
+                    <td>{{m.price}}</td>
+                </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+
+<!--
+    render values (variables)
+
+    logic block
+-->
